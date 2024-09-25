@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import FirstGrade from '../FirstGrade/FirstGrade.jsx';
 import SecondGrade from '../SecondGrade/SecondGrade.jsx';
+import ThirdGrade from '../ThirdGrade/ThirdGrade.jsx';
 
 export default function ProtectedRoutes({ children, requiredGrade }) {
     const authCode = localStorage.getItem('code');
@@ -14,7 +15,7 @@ export default function ProtectedRoutes({ children, requiredGrade }) {
         return <SecondGrade/>
       }
       else if(userGrade==="الصف الثالث الثانوي"){
-        return <FirstGrade/>
+        return <ThirdGrade/>
       }
     // التحقق من الكود
     if (!authCode) {
