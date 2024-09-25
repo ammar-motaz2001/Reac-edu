@@ -12,13 +12,13 @@ const BuyContent = () => {
       <div className="container mx-auto p-8 bg-gray-800 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-center">شراء المحتوى</h1>
         <p className="mb-4 text-lg">
-          يمكنك شراء المحتوى عن طريق تحويل المبلغ المطلوب إلى الرقم التالي:
+          يمكنك شراء المحتوى عن طريق التواصل واتس اب علي  الرقم التالي:
         </p>
         <div className="bg-gray-700 p-4 rounded-lg mb-4 text-center shadow-md">
-          <p className="font-semibold text-xl">رقم الحساب: 01005861691</p>
+          <p className="font-semibold text-xl">رقم فودافون كاش: 01005861691</p>
         </div>
-        <p className="mb-4 text-lg">
-            يرجي التواصل مع الاستاذ طارق النحاس للتاكد من المبلغ المدفوع لشراء المحتوي
+        <p className="mb-4 text-lg text-red-600 font-bold">
+          يرجي التواصل مع الرقم اولا
         </p>
         
         {/* Button to go back to home page */}
