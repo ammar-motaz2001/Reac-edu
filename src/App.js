@@ -16,7 +16,7 @@ import BuyContent from "./component/BuyContent/BuyContent.jsx";
 import OfflineNotification from "./component/Offline/Offline.jsx";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
+  { index:true, element: <Home /> },
   { path: "/about", element: <About /> },
   { path: "/signin", element: <Signin /> },
   { path: "/subscribe", element: <Subscribe /> },
