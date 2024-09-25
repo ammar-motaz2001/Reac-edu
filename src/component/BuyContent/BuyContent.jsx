@@ -15,7 +15,7 @@ const BuyContent = () => {
           يمكنك شراء المحتوى عن طريق تحويل المبلغ المطلوب إلى الرقم التالي:
         </p>
         <div className="bg-gray-700 p-4 rounded-lg mb-4 text-center shadow-md">
-          <p className="font-semibold text-xl">رقم الحساب: 01019371668</p>
+          <p className="font-semibold text-xl">رقم الحساب: 01005861691</p>
         </div>
         <p className="mb-4 text-lg">
             يرجي التواصل مع الاستاذ طارق النحاس للتاكد من المبلغ المدفوع لشراء المحتوي
