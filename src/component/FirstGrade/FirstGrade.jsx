@@ -36,9 +36,9 @@ export default function FirstGrade() {
           >
             مشاهدة المحتوى
           </Link>
-          <Link to={"https://extendedforms.io/form/9cefe5d4-a1b3-4c6e-a6f1-f8dceb8b14bd/login "}
+          <Link to={"https://forms.gle/YHXKHPvhFGLcU6oX7 "}
             className="flex items-center bg-yellow-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
-          >
+          >login
             امتحن الآن
           </Link>
         </div>
