@@ -29,6 +29,13 @@ const FreeContent = () => {
               مشاهدة الآن
             </Link>
           </div>
+
+          {/* Back to Home Button */}
+          <div className="text-center mt-6">
+            <Link to="/" className="inline-block px-6 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-300">
+              العودة إلى الصفحة الرئيسية
+            </Link>
+          </div>
         </div>
       </div>
     </>

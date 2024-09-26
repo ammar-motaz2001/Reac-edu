@@ -14,7 +14,6 @@ const BuyContent = () => {
           <p className="mb-4 text-base md:text-lg text-gray-300 animate__animated animate__fadeIn">يمكنك شراء المحتوى عن طريق التواصل واتس اب علي الرقم التالي:</p>
           
           <div className="bg-yellow-600 p-4 rounded-lg mb-4 text-center shadow-md animate__animated animate__bounceIn">
-            <span className="text-3xl mr-2">❗</span>
             <p className="font-semibold text-xl">01005861691</p>
           </div>
 
