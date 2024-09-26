@@ -17,6 +17,7 @@ export default function FirstGrade() {
         >
           <FaSignOutAlt className="ml-2 text-xl" />
           تسجيل الخروج
+          {localStorage.removeItem("code")}
         </Link>
 
         {/* Container for content */}

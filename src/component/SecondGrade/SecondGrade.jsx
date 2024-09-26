@@ -14,6 +14,8 @@ export default function SecondGrade() {
       <Link to={'/'} className="absolute top-4 left-1/2 transform -translate-x-1/2 text-white font-semibold py-2 px-4 rounded-lg bg-gradient-to-r from-red-500 to-red-600 shadow-lg hover:from-red-600 hover:to-red-700 transition duration-300">
         <FaSignOutAlt className="ml-2 text-xl" />
         تسجيل الخروج
+        {localStorage.removeItem("code")}
+
       </Link>
 
       {/* Main Content Container */}
