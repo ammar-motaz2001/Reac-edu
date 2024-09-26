@@ -15,6 +15,7 @@ export default function ThirdGrade() {
         <FaSignOutAlt className="ml-2 text-xl" />
         تسجيل الخروج
         {localStorage.removeItem("code")}
+        {localStorage.removeItem("grade")}
       </Link>
 
       {/* Main Content Container */}
