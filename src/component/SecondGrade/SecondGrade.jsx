@@ -38,18 +38,13 @@ export default function SecondGrade() {
 
           {/* Buttons Section */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link
-              to="/https://drive.google.com/drive/u/3/home?hl=ar"
-              className="flex items-center ml-3 bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+          <Link
+              to={"/count"}
+              className="flex items-center mx-3 bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
             >
-              مشاهدة المحتوى
+              زياره المحتوي 
             </Link>
-            <Link
-              to="/exam"
-              className="flex items-center bg-yellow-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
-            >
-              امتحن الآن
-            </Link>
+          
           </div>
         </div>
       </div>

@@ -15,6 +15,7 @@ import ThirdGrade from "./component/ThirdGrade/ThirdGrade.jsx";
 import BuyContent from "./component/BuyContent/BuyContent.jsx";
 import OfflineNotification from "./component/Offline/Offline.jsx";
 import FreeContent from "./component/FreeContent/FreeContent.jsx";
+import ContentDropdown from "./component/Count/Count.jsx";
 
 const router = createBrowserRouter([
   { index:true, element: <Home /> },
@@ -58,6 +59,7 @@ const router = createBrowserRouter([
       </ProtectedRoutes>
     ),
   },
+  { path: "/count", element: <ContentDropdown /> },
   { path: "*", element: <Notfoundpage /> },
 ]);
 
