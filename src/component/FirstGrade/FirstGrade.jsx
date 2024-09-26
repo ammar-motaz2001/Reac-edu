@@ -45,7 +45,7 @@ export default function FirstGrade() {
               مشاهدة المحتوى
             </Link>
             <Link
-              to={"https://forms.gle/YHXKHPvhFGLcU6oX7 "}
+              to={"https://youtube.com/playlist?list=PLw8yPWLyk_QQlUJ78XfKKmXdGvFExEHEM&si=0ayjZHWIHmtDt_6d"}
               className="flex items-center bg-yellow-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
             >
               امتحن الان
