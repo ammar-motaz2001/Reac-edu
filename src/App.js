@@ -65,7 +65,7 @@ export default function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <OfflineNotification /> {/* Add the OfflineNotification component */}
+      {/* <OfflineNotification /> */}
     </>
   );
 }
