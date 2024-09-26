@@ -14,6 +14,7 @@ import SecondGrade from "./component/SecondGrade/SecondGrade.jsx";
 import ThirdGrade from "./component/ThirdGrade/ThirdGrade.jsx";
 import BuyContent from "./component/BuyContent/BuyContent.jsx";
 import OfflineNotification from "./component/Offline/Offline.jsx";
+import FreeContent from "./component/FreeContent/FreeContent.jsx";
 
 const router = createBrowserRouter([
   { index:true, element: <Home /> },
@@ -21,6 +22,8 @@ const router = createBrowserRouter([
   { path: "/signin", element: <Signin /> },
   { path: "/subscribe", element: <Subscribe /> },
   { path: "/buy-content", element: < BuyContent/> },
+  { path: "/free-content", element: < FreeContent/> },
+
   {
     path: "/main",
     element: (
