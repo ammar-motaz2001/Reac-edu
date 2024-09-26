@@ -31,16 +31,16 @@ export default function FirstGrade() {
         {/* Buttons Section */}
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Link
-            to="https://drive.google.com/drive/u/2/home"
+            to="https://youtu.be/U9PaWnfrfbQ"
             className="flex items-center mx-3 bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
           >
             مشاهدة المحتوى
           </Link>
-          <button
+          <Link to={"https://extendedforms.io/form/9cefe5d4-a1b3-4c6e-a6f1-f8dceb8b14bd/login "}
             className="flex items-center bg-yellow-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
           >
             امتحن الآن
-          </button>
+          </Link>
         </div>
       </div>
     </div>
