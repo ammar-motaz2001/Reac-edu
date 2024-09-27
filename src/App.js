@@ -16,6 +16,8 @@ import BuyContent from "./component/BuyContent/BuyContent.jsx";
 import OfflineNotification from "./component/Offline/Offline.jsx";
 import FreeContent from "./component/FreeContent/FreeContent.jsx";
 import ContentDropdown from "./component/Count/Count.jsx";
+import Content from "./component/Component/Component.jsx";
+import Signinwithcode from "./component/Code/Code.jsx";
 
 const router = createBrowserRouter([
   { index:true, element: <Home /> },
@@ -60,6 +62,9 @@ const router = createBrowserRouter([
     ),
   },
   { path: "/count", element: <ContentDropdown /> },
+  { path: "/free", element: <Content/> },
+  { path: "/free-sign", element: <Signinwithcode/> },
+
   { path: "*", element: <Notfoundpage /> },
 ]);
 

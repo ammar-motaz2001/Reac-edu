@@ -25,16 +25,24 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    document.body.className = isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800";
+    document.body.className = isDarkMode
+      ? "bg-gray-800 text-white"
+      : "bg-white text-gray-800";
   }, [isDarkMode]);
 
   return (
     <>
-    <Helmet>
-      <title>الصفحه الرئيسيه</title>
-    </Helmet>
+      <Helmet>
+        <title>الصفحه الرئيسيه</title>
+      </Helmet>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <div className={`flex flex-col md:flex-row justify-around items-center px-4 py-8 min-h-screen ${isDarkMode ? 'bg-gradient-to-b from-gray-800 to-gray-900' : 'bg-gradient-to-b from-blue-50 to-blue-100'}`}>
+      <div
+        className={`flex flex-col md:flex-row justify-around items-center px-4 py-8 min-h-screen ${
+          isDarkMode
+            ? "bg-gradient-to-b from-gray-800 to-gray-900"
+            : "bg-gradient-to-b from-blue-50 to-blue-100"
+        }`}
+      >
         {/* Text Section */}
         <div className="text-center md:text-right mb-8 md:mb-0 animate-slide-up">
           <p className="font-extrabold text-2xl md:text-6xl mb-4 tracking-wide leading-tight animate-fade-in">
@@ -43,11 +51,20 @@ const Home = () => {
               طارق النحاس
             </span>
           </p>
-          <Link to="signin">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl animate-bounce-slow">
-              انضم الآن
-            </button>
-          </Link>
+          <div className="space-y-4">
+            <Link to="signin">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl animate-bounce-slow">
+                انضم الآن
+              </button>
+            </Link>
+
+            {/* Explore Now Button */}
+            <Link to="/free-sign">
+              <button className="bg-green-600 hover:bg-green-700 text-white font-bold mr-4 py-3 px-8 rounded-full shadow-lg transition duration-500 ease-in-out transform hover:scale-110 hover:shadow-2xl animate-bounce-slow">
+                استكشف الآن
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Image Section (Fixed Image) */}
