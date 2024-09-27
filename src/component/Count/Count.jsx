@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaExternalLinkAlt } from 'react-icons/fa'; // تأكد من تثبيت react-icons
 
 export default function ContentDropdown() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [chapterImages, setChapterImages] = useState({});
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Load images from localStorage on component mount
+    const savedImages = JSON.parse(localStorage.getItem('chapterImages')) || {};
+    setChapterImages(savedImages);
+  }, []);
 
   const toggleDropdown = (index) => {
     if (openIndex === index) {
@@ -13,6 +20,32 @@ export default function ContentDropdown() {
     } else {
       setOpenIndex(index); // Open the clicked dropdown
     }
+  };
+
+  const handleLogout = () => {
+    navigate('/');
+  };
+
+  // Handle image upload
+  const handleImageUpload = (e, chapterIndex) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const newChapterImages = { ...chapterImages, [chapterIndex]: reader.result };
+        setChapterImages(newChapterImages);
+        localStorage.setItem('chapterImages', JSON.stringify(newChapterImages));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Handle image removal
+  const handleImageRemove = (chapterIndex) => {
+    const newChapterImages = { ...chapterImages };
+    delete newChapterImages[chapterIndex]; // Remove the image for the specific chapter
+    setChapterImages(newChapterImages);
+    localStorage.setItem('chapterImages', JSON.stringify(newChapterImages));
   };
 
   // Animation variants for each dropdown
@@ -28,10 +61,6 @@ export default function ContentDropdown() {
     { title: 'الفصل الرابع' },
     { title: 'الفصل الخامس' },
   ];
-
-  const handleLogout = () => {
-    navigate('/');
-  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-6">
@@ -82,6 +111,34 @@ export default function ContentDropdown() {
                         ابدأ الكويز <FaExternalLinkAlt className="ml-1 text-xs" />
                       </a>
                     </p>
+                    {/* Image upload button */}
+                    <label className="flex items-center justify-center mt-3 cursor-pointer">
+                      <span className="inline-flex items-center justify-center bg-blue-600 text-white font-semibold text-sm py-1 px-2 rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+                        أضف صورة
+                      </span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => handleImageUpload(e, index)}
+                        className="hidden"
+                      />
+                    </label>
+                    {chapterImages[index] && (
+                      <div className="mt-4">
+                        <img
+                          src={chapterImages[index]}
+                          alt={`الفصل ${index + 1}`}
+                          className="max-w-full h-auto rounded-lg shadow-lg"
+                          style={{ width: '100%', height: '200px', objectFit: 'cover' }} // Fixed size and aspect ratio
+                        />
+                        <button
+                          onClick={() => handleImageRemove(index)}
+                          className="mt-2 bg-red-500 text-white font-semibold text-sm py-1 px-2 rounded-lg shadow-lg hover:bg-red-600 transition-transform transform hover:scale-105"
+                        >
+                          مسح الصورة
+                        </button>
+                      </div>
+                    )}
                   </div>
                   <div className="bg-gray-800 text-white p-3 rounded-lg shadow-md">
                     <h3 className="text-xl font-semibold">مشاهدة محتوى الفصل كامل</h3>
@@ -95,10 +152,66 @@ export default function ContentDropdown() {
                         شاهد الفيديو الكامل <FaExternalLinkAlt className="ml-1 text-xs" />
                       </a>
                     </p>
+                    {/* Image upload button */}
+                    <label className="flex items-center justify-center mt-3 cursor-pointer">
+                      <span className="inline-flex items-center justify-center bg-blue-600 text-white font-semibold text-sm py-1 px-2 rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+                        أضف صورة
+                      </span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => handleImageUpload(e, index)}
+                        className="hidden"
+                      />
+                    </label>
+                    {chapterImages[index] && (
+                      <div className="mt-4">
+                        <img
+                          src={chapterImages[index]}
+                          alt={`الفصل ${index + 1}`}
+                          className="max-w-full h-auto rounded-lg shadow-lg"
+                          style={{ width: '100%', height: '200px', objectFit: 'cover' }} // Fixed size and aspect ratio
+                        />
+                        <button
+                          onClick={() => handleImageRemove(index)}
+                          className="mt-2 bg-red-500 text-white font-semibold text-sm py-1 px-2 rounded-lg shadow-lg hover:bg-red-600 transition-transform transform hover:scale-105"
+                        >
+                          مسح الصورة
+                        </button>
+                      </div>
+                    )}
                   </div>
                   <div className="bg-gray-800 text-white p-3 rounded-lg shadow-md">
                     <h3 className="text-xl font-semibold">مراجعة شاملة على الفصل</h3>
                     <p>تأكد من فهمك مع مراجعة شاملة لمحتويات الفصل.</p>
+                    {/* Image upload button */}
+                    <label className="flex items-center justify-center mt-3 cursor-pointer">
+                      <span className="inline-flex items-center justify-center bg-blue-600 text-white font-semibold text-sm py-1 px-2 rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+                        أضف صورة
+                      </span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => handleImageUpload(e, index)}
+                        className="hidden"
+                      />
+                    </label>
+                    {chapterImages[index] && (
+                      <div className="mt-4">
+                        <img
+                          src={chapterImages[index]}
+                          alt={`الفصل ${index + 1}`}
+                          className="max-w-full h-auto rounded-lg shadow-lg"
+                          style={{ width: '100%', height: '200px', objectFit: 'cover' }} // Fixed size and aspect ratio
+                        />
+                        <button
+                          onClick={() => handleImageRemove(index)}
+                          className="mt-2 bg-red-500 text-white font-semibold text-sm py-1 px-2 rounded-lg shadow-lg hover:bg-red-600 transition-transform transform hover:scale-105"
+                        >
+                          مسح الصورة
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               )}
