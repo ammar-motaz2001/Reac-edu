@@ -55,11 +55,11 @@ export default function ContentDropdown() {
   };
 
   const chapters = [
-    { title: 'الفصل الأول' },
-    { title: 'الفصل الثاني' },
-    { title: 'الفصل الثالث' },
-    { title: 'الفصل الرابع' },
-    { title: 'الفصل الخامس' },
+    { title: 'الاسبوع الاول ' },
+    { title: 'الاسبوع الثاني' },
+    { title: 'الاسبوع الثالث' },
+    { title: 'الاسبوع الرابع' },
+    { title: 'الاسبوع الخامس' },
   ];
 
   return (
