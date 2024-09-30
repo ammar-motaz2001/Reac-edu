@@ -18,6 +18,9 @@ import FreeContent from "./component/FreeContent/FreeContent.jsx";
 import ContentDropdown from "./component/Count/Count.jsx";
 import Content from "./component/Component/Component.jsx";
 import Signinwithcode from "./component/Code/Code.jsx";
+import ContentOne from "./component/CountOne/Countone.jsx";
+import ContentThree from "./component/CountTwo/CountTwo.jsx";
+import ContentTwo from "./component/CountTwo/CountTwo.jsx";
 
 const router = createBrowserRouter([
   { index:true, element: <Home /> },
@@ -61,7 +64,11 @@ const router = createBrowserRouter([
       </ProtectedRoutes>
     ),
   },
-  { path: "/count", element: <ContentDropdown /> },
+  { path: "/count-three", element: <ContentDropdown /> },
+  { path: "/count-one", element: <ContentOne /> },
+  { path: "/count-two", element: <ContentTwo /> },
+
+
   { path: "/free", element: <Content/> },
   { path: "/free-sign", element: <Signinwithcode/> },
 

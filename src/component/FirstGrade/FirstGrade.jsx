@@ -39,7 +39,7 @@ export default function FirstGrade() {
           {/* Buttons Section */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Link
-              to={"/count"}
+              to={"/count-one"}
               className="flex items-center mx-3 bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
             >
               زياره المحتوي 
