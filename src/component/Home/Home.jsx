@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
 import photo from "../../assets/ea5875ef1fbb4382ba6f91522e20b2f7-removebg-preview.png";
 import { Helmet } from "react-helmet";
-import video from "../../assets/video6037453966281807872.mp4"; // تأكد من مسار الفيديو الصحيح
+import video from "../../assets/bandicam 2024-10-02 05-55-59-528.mp4"; // تأكد من مسار الفيديو الصحيح
 
 const Home = () => {
   const [text, setText] = useState("");
