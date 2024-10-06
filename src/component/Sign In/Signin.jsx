@@ -15,6 +15,8 @@ export default function Signin() {
   const [loading, setLoading] = useState(false);
   const [code, setCode] = useState("");
   const [hasCode, setHasCode] = useState(false); // State to track if user has a code
+  const [modalVisible, setModalVisible] = useState(false); // Modal state
+  const [responseNo, setResponseNo] = useState(""); // State to store 'no' value from response
   const navigate = useNavigate();
 
   // Function to handle API submission for email
@@ -27,12 +29,16 @@ export default function Signin() {
       );
 
       if (response.data.message === "تم الإنشاء بنجاح") {
-        console.log(response.data.user.code);
+        console.log(response.data.user.no);
         localStorage.setItem("code", response.data.user.code); // Store the code
         localStorage.setItem("grade", response.data.user.grade);
         setErrorMessage("");
 
-        navigate("/loading");
+        // Handle the 'no' value in response
+        if (response.data.user.no) {
+          setResponseNo(response.data.user.no);
+          setModalVisible(true); // Show modal if 'no' is present
+        }
       } else {
         setErrorMessage("لم يتم الإنشاء.يرجى المحاولة مرة أخرى.");
       }
@@ -129,7 +135,6 @@ export default function Signin() {
         >
           <h1 className="text-3xl font-bold text-center mb-6">تسجيل الدخول</h1>
           <form onSubmit={formik.handleSubmit}>
-            {/* Conditional rendering based on hasCode state */}
             {!hasCode && (
               <>
                 <input
@@ -215,11 +220,47 @@ export default function Signin() {
               onClick={() => setHasCode(!hasCode)}
               className="w-full bg-gray-600 text-white font-bold py-2 rounded-md hover:bg-gray-700 transition duration-200 mt-4"
             >
-              {hasCode ? " العوده لانشاء حساب والحصول علي الكود": "هل تمتلك كود بالفعل؟"}
+              {hasCode ? " العوده لانشاء حساب والحصول علي الكود" : "هل تمتلك كود بالفعل؟"}
             </button>
           </form>
         </div>
       </div>
+
+      {/* Modal for displaying the 'no' value */}
+      {modalVisible && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+          <div className={`bg-${isDarkMode ? "gray-800" : "white"} p-8 rounded-lg shadow-lg max-w-md w-full text-center`}>
+            <h2 className={`text-xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-black"}`}>
+              معلومات الحساب
+            </h2>
+            <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+              تم الحصول على الرقم: {responseNo}
+            </p>
+            <div className="flex justify-between mt-4">
+              <button
+                onClick={() => setModalVisible(false)}
+                className={`px-4 py-2 rounded-md ${
+                  isDarkMode
+                    ? "bg-blue-600 text-white hover:bg-blue-700"
+                    : "bg-blue-400 text-black hover:bg-blue-500"
+                }`}
+              >
+                أغلق
+              </button>
+              <button
+                onClick={() => navigate("/loading")}
+                className={`px-4 py-2 rounded-md ${
+                  isDarkMode
+                    ? "bg-green-600 text-white hover:bg-green-700"
+                    : "bg-green-400 text-black hover:bg-green-500"
+                }`}
+              >
+                استمرار
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

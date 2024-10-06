@@ -8,13 +8,13 @@ export default function ProtectedRoutes({ children, requiredGrade }) {
     const authCode = localStorage.getItem('code');
     const userGrade = localStorage.getItem('grade');
 
-      if(userGrade==="الصف الاول الثانوي"){
+      if(userGrade==="الصف الاول الثانوي" && authCode){
         return <FirstGrade/>
       }
-      else if(userGrade==="الصف الثاني الثانوي"){
+      else if(userGrade==="الصف الثاني الثانوي" && authCode){
         return <SecondGrade/>
       }
-      else if(userGrade==="الصف الثالث الثانوي"){
+      else if(userGrade==="الصف الثالث الثانوي" && authCode){
         return <ThirdGrade/>
       }
     // التحقق من الكود
