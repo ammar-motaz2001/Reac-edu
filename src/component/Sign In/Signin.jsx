@@ -118,7 +118,8 @@ export default function Signin() {
   return (
     <>
       <Helmet>
-        <title>{hasCode ? "تسجيل الدخول" : "إنشاء الحساب الخاص بك"}</title> {/* Change title based on hasCode */}
+        <title>{hasCode ? "تسجيل الدخول" : "إنشاء الحساب الخاص بك"}</title>{" "}
+        {/* Change title based on hasCode */}
       </Helmet>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <div
@@ -134,7 +135,8 @@ export default function Signin() {
           }`}
         >
           <h1 className="text-3xl font-bold text-center mb-6">
-            {hasCode ? "تسجيل الدخول" : "إنشاء الحساب الخاص بك"} {/* Change header based on hasCode */}
+            {hasCode ? "تسجيل الدخول" : "إنشاء الحساب الخاص بك"}{" "}
+            {/* Change header based on hasCode */}
           </h1>
           <form onSubmit={formik.handleSubmit}>
             {!hasCode && (
@@ -146,7 +148,9 @@ export default function Signin() {
                   type="email"
                   placeholder="ادخل البريد الالكتروني الخاص بك"
                   className={`w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 mb-2 ${
-                    isDarkMode ? "bg-gray-600 text-white" : "bg-white text-gray-800"
+                    isDarkMode
+                      ? "bg-gray-600 text-white"
+                      : "bg-white text-gray-800"
                   }`}
                 />
                 <input
@@ -156,7 +160,9 @@ export default function Signin() {
                   type="text"
                   placeholder="ادخل الاسم الثلاثي"
                   className={`w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 mb-2 ${
-                    isDarkMode ? "bg-gray-600 text-white" : "bg-white text-gray-800"
+                    isDarkMode
+                      ? "bg-gray-600 text-white"
+                      : "bg-white text-gray-800"
                   }`}
                 />
                 <select
@@ -164,18 +170,29 @@ export default function Signin() {
                   onChange={formik.handleChange}
                   value={formik.values.grade}
                   className={`w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 mb-2 ${
-                    isDarkMode ? "bg-gray-600 text-white" : "bg-white text-gray-800"
+                    isDarkMode
+                      ? "bg-gray-600 text-white"
+                      : "bg-white text-gray-800"
                   }`}
                 >
                   <option value="الصف الاول الثانوي">الصف الاول الثانوي</option>
-                  <option value="الصف الثاني الثانوي">الصف الثاني الثانوي</option>
-                  <option value="الصف الثالث الثانوي">الصف الثالث الثانوي</option>
+                  <option value="الصف الثاني الثانوي">
+                    الصف الثاني الثانوي
+                  </option>
+                  <option value="الصف الثالث الثانوي">
+                    الصف الثالث الثانوي
+                  </option>
                 </select>
 
                 {/* Note about email */}
-                <p className={isDarkMode ? "text-gray-300 mb-4" : "text-gray-700 mb-4"}>
-                  شرط ان يكون البريد الالكتروني صحيح حتي تتيح لك مشاهده الفيديوهات واداء الامتحانات بسهوله.
-                </p> 
+                <p
+                  className={
+                    isDarkMode ? "text-gray-300 mb-4" : "text-gray-700 mb-4"
+                  }
+                >
+                  شرط ان يكون البريد الالكتروني صحيح حتي تتيح لك مشاهده
+                  الفيديوهات واداء الامتحانات بسهوله.
+                </p>
               </>
             )}
 
@@ -186,7 +203,9 @@ export default function Signin() {
                 type="text"
                 placeholder="ادخل الكود الخاص بك"
                 className={`w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 mb-2 ${
-                  isDarkMode ? "bg-gray-600 text-white" : "bg-white text-gray-800"
+                  isDarkMode
+                    ? "bg-gray-600 text-white"
+                    : "bg-white text-gray-800"
                 }`}
               />
             )}
@@ -227,7 +246,9 @@ export default function Signin() {
               onClick={() => setHasCode(!hasCode)}
               className="w-full bg-gray-600 text-white font-bold py-2 rounded-md hover:bg-gray-700 transition duration-200 mt-4"
             >
-              {hasCode ? "الرجوع إلى إنشاء حساب" : "هل تمتلك كود بالفعل؟"}
+              {hasCode
+                ? "الرجوع إلى إنشاء حساب"
+                : "هل تمتلك كود بالفعل؟سجل دخولك الأن"}
             </button>
           </form>
         </div>
@@ -235,40 +256,47 @@ export default function Signin() {
 
       {/* Modal for showing response 'no' */}
       {modalVisible && (
-  <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
-    <div className={`p-8 rounded-lg shadow-lg max-w-md w-full text-center ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
-      <h2 className={`text-xl font-bold mb-4 ${isDarkMode ? "text-white" : "text-black"}`}>
-        معلومات الحساب
-      </h2>
-      <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
-        تم الحصول على الرقم: {responseNo}
-      </p>
-      <div className="flex justify-between mt-4">
-        <button
-          onClick={() => setModalVisible(false)}
-          className={`px-4 py-2 rounded-md ${
-            isDarkMode
-              ? "bg-blue-600 text-white hover:bg-blue-700"
-              : "bg-blue-400 text-black hover:bg-blue-500"
-          }`}
-        >
-          أغلق
-        </button>
-        <button
-          onClick={() => navigate("/loading")}
-          className={`px-4 py-2 rounded-md ${
-            isDarkMode
-              ? "bg-green-600 text-white hover:bg-green-700"
-              : "bg-green-400 text-black hover:bg-green-500"
-          }`}
-        >
-          استمرار
-        </button>
-      </div>
-    </div>
-  </div>
-)}
-
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+          <div
+            className={`p-8 rounded-lg shadow-lg max-w-md w-full text-center ${
+              isDarkMode ? "bg-gray-800" : "bg-white"
+            }`}
+          >
+            <h2
+              className={`text-xl font-bold mb-4 ${
+                isDarkMode ? "text-white" : "text-black"
+              }`}
+            >
+              معلومات الحساب
+            </h2>
+            <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+              تم الحصول على الرقم: {responseNo}
+            </p>
+            <div className="flex justify-between mt-4">
+              <button
+                onClick={() => setModalVisible(false)}
+                className={`px-4 py-2 rounded-md ${
+                  isDarkMode
+                    ? "bg-blue-600 text-white hover:bg-blue-700"
+                    : "bg-blue-400 text-black hover:bg-blue-500"
+                }`}
+              >
+                أغلق
+              </button>
+              <button
+                onClick={() => navigate("/loading")}
+                className={`px-4 py-2 rounded-md ${
+                  isDarkMode
+                    ? "bg-green-600 text-white hover:bg-green-700"
+                    : "bg-green-400 text-black hover:bg-green-500"
+                }`}
+              >
+                استمرار
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
