@@ -223,7 +223,7 @@ export default function Signin() {
                 {loading ? (
                   <FaSpinner className="animate-spin mr-2" />
                 ) : (
-                  "تسجيل الدخول"
+                  "انشاء الحساب"
                 )}
               </button>
             ) : (
