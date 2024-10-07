@@ -135,7 +135,7 @@ export default function Signin() {
           }`}
         >
           <h1 className="text-3xl font-bold text-center mb-6">
-            {hasCode ? "تسجيل الدخول" : "إنشاء الحساب الخاص بك"}{" "}
+            {hasCode ? "تسجيل الدخول" : "إنشاء حساب جديد"}{" "}
             {/* Change header based on hasCode */}
           </h1>
           <form onSubmit={formik.handleSubmit}>
