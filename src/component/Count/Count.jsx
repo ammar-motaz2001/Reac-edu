@@ -87,7 +87,7 @@ export default function ContentDropdown() {
                     <h3 className="text-xl font-semibold">مشاهدة محتوى الفصل كامل</h3>
                     <p>
                       <a
-                        href="https://drive.google.com/drive/folders/1-eSHKhflnPSSrHzp5DAw2kPDm551b-NO"
+                        href="https://drive.google.com/drive/folders/1ZOsuD9kQD9I9WVKIKk9X2rc379LuIJN5"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center bg-blue-500 text-white font-semibold text-sm py-1 px-2 rounded-lg shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105"

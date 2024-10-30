@@ -87,7 +87,7 @@ export default function ContentOne() {
                     <h3 className="text-xl font-semibold">مشاهدة محتوى الفصل كامل</h3>
                     <p>
                       <a
-                        href="https://drive.google.com/drive/folders/1-eSHKhflnPSSrHzp5DAw2kPDm551b-NO"
+                        href="https://drive.google.com/drive/folders/1ZidYHzBxn8RIObBlfeFFfT6NRODW2iNc"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center bg-blue-500 text-white font-semibold text-sm py-1 px-2 rounded-lg shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105"
