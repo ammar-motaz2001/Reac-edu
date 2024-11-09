@@ -22,12 +22,12 @@ import ContentTwo from "./component/CountTwo/CountTwo.jsx";
 import Repair from "./repair/repair.jsx";
 
 const router = createBrowserRouter([
-  // { index:true, element: <Home /> },
-  { path: "/", element: <Repair /> },
-  // { path: "/signin", element: <Signin /> },
-  // { path: "/subscribe", element: <Subscribe /> },
-  // { path: "/buy-content", element: < BuyContent/> },
-  // { path: "/free-content", element: < FreeContent/> },
+  { index:true, element: <Home /> },
+  // { path: "/", element: <Repair /> },
+  { path: "/signin", element: <Signin /> },
+  { path: "/subscribe", element: <Subscribe /> },
+  { path: "/buy-content", element: < BuyContent/> },
+  { path: "/free-content", element: < FreeContent/> },
 
   {
     path: "/main",
